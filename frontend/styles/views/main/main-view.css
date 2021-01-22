@@ -16,7 +16,7 @@
   margin-right: var(--lumo-space-l);
   overflow: hidden;
   margin-left: auto;
-  background-color: var(--lumo-contrast);
+  background-color: var(--lumo-primary-color-darker);
 }
 vaadin-app-layout[dir='rtl'] vaadin-horizontal-layout #header img#avatar {
   margin-left: var(--lumo-space-l);
