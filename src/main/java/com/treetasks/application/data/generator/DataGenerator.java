@@ -35,11 +35,11 @@ public class DataGenerator {
             ExampleDataGenerator<Category> categoryRepositoryGenerator = new ExampleDataGenerator<>(Category.class,
                     LocalDateTime.of(2021, 1, 20, 0, 0, 0));
             categoryRepositoryGenerator.setData(Category::setId, DataType.ID);
-            categoryRepositoryGenerator.setData(Category::setName, DataType.WORD);
-            categoryRepositoryGenerator.setData(Category::setDescription, DataType.WORD);
+            categoryRepositoryGenerator.setData(Category::setName, DataType.BOOK_GENRE);
+            categoryRepositoryGenerator.setData(Category::setDescription, DataType.SENTENCE);
             categoryRepositoryGenerator.setData(Category::setDateOfCreation, DataType.DATE_OF_BIRTH);
             categoryRepositoryGenerator.setData(Category::setActive, DataType.BOOLEAN_90_10);
-            categoryRepository.saveAll(categoryRepositoryGenerator.create(100, seed));
+            categoryRepository.saveAll(categoryRepositoryGenerator.create(5, seed));
 
             logger.info("... generating 100 Users entities...");
             ExampleDataGenerator<User> usersRepositoryGenerator = new ExampleDataGenerator<>(User.class,
@@ -54,7 +54,7 @@ public class DataGenerator {
             usersRepositoryGenerator.setData(User::setDateOfCreation, DataType.DATE_OF_BIRTH);
             usersRepositoryGenerator.setData(User::setPassword, DataType.WORD);
             usersRepositoryGenerator.setData(User::setActive, DataType.BOOLEAN_90_10);
-            usersRepository.saveAll(usersRepositoryGenerator.create(100, seed));
+            usersRepository.saveAll(usersRepositoryGenerator.create(5, seed));
 
             logger.info("Generated demo data");
         };
