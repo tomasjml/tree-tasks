@@ -32,7 +32,8 @@ $_documentContainer.innerHTML = `
     [theme~="dark"] {
       --lumo-base-color: #483B32;
       --lumo-primary-color: #74A57F;
-      --lumo-primary-color-darker : #496F52;
+      --lumo-primary-color-darker: #496F52;
+      --lumo-primary-color-clearer: #84AE8E;
       --lumo-error-color: #DB504A;
       --lumo-success-color: #FFBF00;
       --lumo-body-text-color: #F0E2E7;
@@ -45,6 +46,7 @@ $_documentContainer.innerHTML = `
     *::-webkit-scrollbar {
       width: 12px;
       height: 15px;
+      transition: transform .2s;
     }
     
     *::-webkit-scrollbar-track-piece  {
@@ -53,10 +55,16 @@ $_documentContainer.innerHTML = `
     }
     
     *::-webkit-scrollbar-thumb {
-      height: 30p#grid-wrappex;
+      height: 30px;
       background-color: var(--lumo-primary-color);
       border-radius: 5px;
       -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    }
+    
+    *::-webkit-scrollbar-thumb:hover {
+        background-color: var(--lumo-primary-color-clearer);
+        transform: scale(1.5);
+        transition: 2s;
     }
 
 </style>
@@ -66,21 +74,28 @@ $_documentContainer.innerHTML = `
     <template>
         <style>
              *::-webkit-scrollbar {
-                  width: 12px;
-                  height: 15px;
-                }
-                
-                *::-webkit-scrollbar-track-piece  {
+                width: 12px;
+                height: 15px;
+                transition: transform .2s;
+             }
+             
+             *::-webkit-scrollbar-track-piece  {
                   background-color: var(--lumo-base-color-darker);
                   border-radius: 5px;
-                }
+             }
                 
-                *::-webkit-scrollbar-thumb {
-                  height: 30p#grid-wrappex;
+             *::-webkit-scrollbar-thumb {
+                  height: 30px;
                   background-color: var(--lumo-primary-color);
                   border-radius: 5px;
                   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
-                }
+             }
+             
+             *::-webkit-scrollbar-thumb:hover {
+                background-color: var(--lumo-primary-color-clearer);
+                transform: scale(1.5);
+                transition: 2s;
+            }
         </style>
     </template>
 </dom-module>
